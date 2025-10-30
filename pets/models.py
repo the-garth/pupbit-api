@@ -27,6 +27,7 @@ class Pet(models.Model):
         choices=VaccinationStatus.choices,
         default=VaccinationStatus.UNKNOWN,
     )
+    is_lost = models.BooleanField(default=False)
     last_vaccination_date = models.DateField(blank=True, null=True)
     vet_name = models.CharField(max_length=100, blank=True, null=True)
     vet_contact_number = models.CharField(
