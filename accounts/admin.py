@@ -3,8 +3,17 @@ from django.contrib.auth.admin import UserAdmin
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
+from pets.models import Pet
 
 # Register your models here.
+
+
+class PetInline(admin.TabularInline):
+    model = Pet
+    extra = 0
+    readonly_fields = ('pet_id', 'name', 'species', 'breed')
+    fields = ('pet_id', 'name', 'species', 'breed')
+    show_change_link = True
 
 
 class CustomUserAdmin(UserAdmin):
@@ -29,6 +38,7 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('last_login', 'date_joined'),
         }),
     )
+    inlines = [PetInline]
     add_fieldsets = (
         (None, {
             'fields': (
