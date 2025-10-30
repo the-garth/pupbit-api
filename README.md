@@ -1,1 +1,1 @@
-# pupbit-api
+# Pupbit API
