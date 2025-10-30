@@ -16,10 +16,17 @@ class CustomUserAdmin(UserAdmin):
     readonly_fields = ('user_id',)
     fieldsets = (
         (None, {
-            'fields': ('email', 'is_staff', 'is_active',
-                       'username', 'password', 'user_id', 'first_name', 'last_name', 'profile_picture',
-                       'phone_number', 'address_line1', 'address_line2', 'city', 'state', 'postal_code', 'country'
+            'fields': ('email', 'username', 'password', 'user_id', 'first_name', 'last_name', 'profile_picture', 'is_staff', 'is_active',
                        ),
+        }),
+        ('Contact Information', {
+            'fields': ('phone_number', 'address_line1', 'address_line2', 'city', 'state', 'postal_code', 'country')
+        }),
+        ('Permissions', {
+            'fields': ('groups', 'user_permissions'),
+        }),
+        ('Timestamps', {
+            'fields': ('last_login', 'date_joined'),
         }),
     )
     add_fieldsets = (
