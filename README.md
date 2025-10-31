@@ -19,6 +19,7 @@ Django + DRF API for tracking lost pets, as well as displaying pet data like vac
 ### Further enhancements to be made
 
 - Add further documentation on running the API
+- Add endpoint for a user to view their own profile
 - Add GeoPoint and GeoDjango for last_known_location
 - Setup the method to mark pet as lost/found
 - Add lng/lat in model for pets
